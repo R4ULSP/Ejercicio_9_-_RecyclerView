@@ -8,6 +8,7 @@ public abstract class References {
 
     public static final String HOME_FRAGMENT = "homeFragment";
     public static final String POSITION_FRAGMENT = "positionFragment";
+    public static final String CAR_FRAGMENT = "carFragment";
 
     public static final String FRAGMENT_RESULT = "fragmentResult";
 

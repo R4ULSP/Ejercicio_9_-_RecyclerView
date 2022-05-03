@@ -1,8 +1,7 @@
-package es.travelworld.ejercicio9_recyclerview.fragments;
+package es.travelworld.ejercicio9_recyclerview.view.fragments;
 
 import static es.travelworld.ejercicio9_recyclerview.domain.References.KEY_POSITION;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;

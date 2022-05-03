@@ -1,4 +1,4 @@
-package es.travelworld.ejercicio9_recyclerview.fragments;
+package es.travelworld.ejercicio9_recyclerview.view.fragments;
 
 import static es.travelworld.ejercicio9_recyclerview.domain.References.FRAGMENT_RESULT;
 import static es.travelworld.ejercicio9_recyclerview.domain.References.KEY_USER;

@@ -1,5 +1,6 @@
-package es.travelworld.ejercicio9_recyclerview;
+package es.travelworld.ejercicio9_recyclerview.view;
 
+import static es.travelworld.ejercicio9_recyclerview.domain.References.CAR_FRAGMENT;
 import static es.travelworld.ejercicio9_recyclerview.domain.References.HOME_FRAGMENT;
 import static es.travelworld.ejercicio9_recyclerview.domain.References.KEY_USER;
 import static es.travelworld.ejercicio9_recyclerview.domain.References.NUM_PAGES_HOME;
@@ -24,11 +25,13 @@ import com.google.android.material.tabs.TabLayoutMediator;
 
 import java.util.Objects;
 
+import es.travelworld.ejercicio9_recyclerview.R;
 import es.travelworld.ejercicio9_recyclerview.databinding.ActivityHomeBinding;
 import es.travelworld.ejercicio9_recyclerview.domain.User;
-import es.travelworld.ejercicio9_recyclerview.fragments.HomeFragment;
-import es.travelworld.ejercicio9_recyclerview.fragments.PositionFragment;
-import es.travelworld.ejercicio9_recyclerview.fragments.WipFragment;
+import es.travelworld.ejercicio9_recyclerview.view.fragments.CarFragment;
+import es.travelworld.ejercicio9_recyclerview.view.fragments.HomeFragment;
+import es.travelworld.ejercicio9_recyclerview.view.fragments.PositionFragment;
+import es.travelworld.ejercicio9_recyclerview.view.fragments.WipFragment;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -204,6 +207,8 @@ public class HomeActivity extends AppCompatActivity {
 
             if (position == 0) {
                 fragment = startHomeFragment();
+            } else if (position == 1) {
+                fragment = startCarFragment();
             } else {
                 fragment = startPositionFragment(position);
             }
@@ -233,6 +238,16 @@ public class HomeActivity extends AppCompatActivity {
                 return positionFragment;
             } else {
                 return PositionFragment.newInstance(position);
+            }
+        }
+
+        private Fragment startCarFragment() {
+            CarFragment carFragment = (CarFragment) getSupportFragmentManager().findFragmentByTag(CAR_FRAGMENT);
+
+            if (carFragment != null) {
+                return carFragment;
+            } else {
+                return CarFragment.newInstance();
             }
         }
     }

@@ -1,4 +1,4 @@
-package es.travelworld.ejercicio9_recyclerview.fragments;
+package es.travelworld.ejercicio9_recyclerview.view.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -9,27 +9,26 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import es.travelworld.ejercicio9_recyclerview.databinding.FragmentMatchBinding;
+import es.travelworld.ejercicio9_recyclerview.databinding.FragmentRoommateBinding;
 
-public class MatchFragment extends Fragment {
+public class RoommateFragment extends Fragment {
 
-    private FragmentMatchBinding binding;
+    private FragmentRoommateBinding binding;
 
-    private OnClickItemMatchFragment listener;
+    private OnClickItemRoommateFragment listener;
 
-    public interface OnClickItemMatchFragment {
-        void matchNextButton();
-
-        void matchSkipButton();
+    public interface OnClickItemRoommateFragment {
+        void roommateLoginButton();
     }
 
-    public MatchFragment() {
+    public RoommateFragment() {
         // Required empty public constructor
     }
 
 
-    public static MatchFragment newInstance() {
-        return new MatchFragment();
+    public static RoommateFragment newInstance() {
+
+        return new RoommateFragment();
     }
 
     @Override
@@ -41,23 +40,23 @@ public class MatchFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding = FragmentMatchBinding.inflate(inflater, container, false);
+        binding = FragmentRoommateBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
 
         setListeners();
+
         return view;
     }
 
     private void setListeners() {
-        binding.matchButtonNext.setOnClickListener(view -> listener.matchNextButton());
-        binding.matchButtonSkip.setOnClickListener(view -> listener.matchSkipButton());
+        binding.matchButtonLogin.setOnClickListener(view -> listener.roommateLoginButton());
     }
 
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
-        if (context instanceof MatchFragment.OnClickItemMatchFragment) {
-            listener = (MatchFragment.OnClickItemMatchFragment) context;
+        if (context instanceof RoommateFragment.OnClickItemRoommateFragment) {
+            listener = (RoommateFragment.OnClickItemRoommateFragment) context;
         }
     }
 

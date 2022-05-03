@@ -1,4 +1,4 @@
-package es.travelworld.ejercicio9_recyclerview;
+package es.travelworld.ejercicio9_recyclerview.view;
 
 
 import static es.travelworld.ejercicio9_recyclerview.domain.References.KEY_USER;
@@ -14,9 +14,9 @@ import androidx.fragment.app.FragmentManager;
 
 import es.travelworld.ejercicio9_recyclerview.databinding.ActivityLoginBinding;
 import es.travelworld.ejercicio9_recyclerview.domain.User;
-import es.travelworld.ejercicio9_recyclerview.fragments.LoginErrorFragment;
-import es.travelworld.ejercicio9_recyclerview.fragments.LoginFragment;
-import es.travelworld.ejercicio9_recyclerview.fragments.RegisterFragment;
+import es.travelworld.ejercicio9_recyclerview.view.fragments.LoginErrorFragment;
+import es.travelworld.ejercicio9_recyclerview.view.fragments.LoginFragment;
+import es.travelworld.ejercicio9_recyclerview.view.fragments.RegisterFragment;
 
 public class LoginActivity extends AppCompatActivity implements LoginFragment.OnClickItemLoginFragment, RegisterFragment.OnClickItemRegisterFragment {
 

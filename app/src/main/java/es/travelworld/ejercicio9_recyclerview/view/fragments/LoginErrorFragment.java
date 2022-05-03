@@ -1,4 +1,4 @@
-package es.travelworld.ejercicio9_recyclerview.fragments;
+package es.travelworld.ejercicio9_recyclerview.view.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

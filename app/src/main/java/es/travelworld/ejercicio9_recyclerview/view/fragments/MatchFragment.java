@@ -1,4 +1,4 @@
-package es.travelworld.ejercicio9_recyclerview.fragments;
+package es.travelworld.ejercicio9_recyclerview.view.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -9,26 +9,27 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import es.travelworld.ejercicio9_recyclerview.databinding.FragmentRoommateBinding;
+import es.travelworld.ejercicio9_recyclerview.databinding.FragmentMatchBinding;
 
-public class RoommateFragment extends Fragment {
+public class MatchFragment extends Fragment {
 
-    private FragmentRoommateBinding binding;
+    private FragmentMatchBinding binding;
 
-    private OnClickItemRoommateFragment listener;
+    private OnClickItemMatchFragment listener;
 
-    public interface OnClickItemRoommateFragment {
-        void roommateLoginButton();
+    public interface OnClickItemMatchFragment {
+        void matchNextButton();
+
+        void matchSkipButton();
     }
 
-    public RoommateFragment() {
+    public MatchFragment() {
         // Required empty public constructor
     }
 
 
-    public static RoommateFragment newInstance() {
-
-        return new RoommateFragment();
+    public static MatchFragment newInstance() {
+        return new MatchFragment();
     }
 
     @Override
@@ -40,23 +41,23 @@ public class RoommateFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding = FragmentRoommateBinding.inflate(inflater, container, false);
+        binding = FragmentMatchBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
 
         setListeners();
-
         return view;
     }
 
     private void setListeners() {
-        binding.matchButtonLogin.setOnClickListener(view -> listener.roommateLoginButton());
+        binding.matchButtonNext.setOnClickListener(view -> listener.matchNextButton());
+        binding.matchButtonSkip.setOnClickListener(view -> listener.matchSkipButton());
     }
 
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
-        if (context instanceof RoommateFragment.OnClickItemRoommateFragment) {
-            listener = (RoommateFragment.OnClickItemRoommateFragment) context;
+        if (context instanceof MatchFragment.OnClickItemMatchFragment) {
+            listener = (MatchFragment.OnClickItemMatchFragment) context;
         }
     }
 

@@ -1,4 +1,4 @@
-package es.travelworld.ejercicio9_recyclerview;
+package es.travelworld.ejercicio9_recyclerview.view;
 
 import static es.travelworld.ejercicio9_recyclerview.domain.References.MATCH_FRAGMENT;
 import static es.travelworld.ejercicio9_recyclerview.domain.References.NUM_PAGES_MAIN;
@@ -14,9 +14,9 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import es.travelworld.ejercicio9_recyclerview.databinding.ActivityMainBinding;
-import es.travelworld.ejercicio9_recyclerview.fragments.MatchFragment;
-import es.travelworld.ejercicio9_recyclerview.fragments.OnBoardingFragment;
-import es.travelworld.ejercicio9_recyclerview.fragments.RoommateFragment;
+import es.travelworld.ejercicio9_recyclerview.view.fragments.MatchFragment;
+import es.travelworld.ejercicio9_recyclerview.view.fragments.OnBoardingFragment;
+import es.travelworld.ejercicio9_recyclerview.view.fragments.RoommateFragment;
 
 public class MainActivity extends AppCompatActivity implements OnBoardingFragment.OnClickItemOnBoardingFragment, MatchFragment.OnClickItemMatchFragment, RoommateFragment.OnClickItemRoommateFragment {
 
