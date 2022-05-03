@@ -6,7 +6,10 @@
     tools:context=".view.fragments.CarFragment">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/carList"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:listitem="@layout/itemlayout_car_list"/>
 
 </FrameLayout>

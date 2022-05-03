@@ -31,6 +31,9 @@ public class MainActivity extends AppCompatActivity implements OnBoardingFragmen
 
         FragmentStateAdapter fragmentStateAdapter = new MainActivityFragmentStateAdapter(this);
         binding.viewPager.setAdapter(fragmentStateAdapter);
+
+        Intent intent = new Intent(this,HomeActivity.class);
+        startActivity(intent);
     }
 
     @Override
