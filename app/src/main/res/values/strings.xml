@@ -40,4 +40,6 @@
     <string name="skip">Skip</string>
     <string name="log_in">Log in</string>
     <string name="roommate_title">Find the Perfect Roommate</string>
+
+    <string name="price_car">$%.2f/per day</string>
 </resources>

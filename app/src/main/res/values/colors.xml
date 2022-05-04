@@ -16,4 +16,13 @@
     <color name="light_pink">#ffdbf5</color>
     <color name="light_orange">#fff2ae</color>
     <color name="dark_grey">#595858</color>
+
+    <color name="electric_car">#2C2F35</color>
+    <color name="classic_car">#8E4B13</color>
+    <color name="sport_car">#5A87E1</color>
+    <color name="flying_car">#945AB1</color>
+    <color name="motor_home">#617193</color>
+    <color name="pick_up">#9F846B</color>
+    <color name="airplane">#CA5858</color>
+    <color name="bus">#FADF82</color>
 </resources>
