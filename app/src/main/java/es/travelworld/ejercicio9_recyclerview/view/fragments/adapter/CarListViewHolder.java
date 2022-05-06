@@ -1,10 +1,8 @@
 package es.travelworld.ejercicio9_recyclerview.view.fragments.adapter;
 
-import android.graphics.drawable.Drawable;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.core.content.ContextCompat;
-import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import es.travelworld.ejercicio9_recyclerview.R;
@@ -13,30 +11,47 @@ import es.travelworld.ejercicio9_recyclerview.domain.CarItem;
 
 public class CarListViewHolder extends RecyclerView.ViewHolder {
 
-    private ItemlayoutCarListBinding binding;
+    private final ItemlayoutCarListBinding binding;
 
     public CarListViewHolder(@NonNull ItemlayoutCarListBinding bindingView) {
         super(bindingView.getRoot());
         this.binding = bindingView;
+
+
     }
 
     public void bind(CarItem carItem) {
         binding.carName.setText(carItem.getCarName());
         binding.carPhoto.setImageResource(getImageFromTypeCar(carItem.getCarType()));
-        binding.carPrice.setText(itemView.getContext().getString(R.string.price_car,carItem.getCarPrice()));
+        binding.carPrice.setText(itemView.getContext().getString(R.string.price_car, carItem.getCarPrice()));
+        binding.cardItem.setBackgroundResource(getCardColor(carItem.getCarType()));
 
-        //getColor(carItem.getCarType());
+        binding.cardItem.setOnClickListener(view -> Toast.makeText(itemView.getContext(), carItem.getCarName(), Toast.LENGTH_SHORT).show());
     }
 
-    private void getColor(String carType) {
-        Drawable tintDrawable = binding.cardItem.getBackground();
-        DrawableCompat.wrap(tintDrawable);
-        DrawableCompat.setTint(tintDrawable, ContextCompat.getColor(itemView.getContext(),R.color.electric_car));
-        //TODO Estructura para aplicar color
+    private int getCardColor(String carType) {
+        switch (carType) {
+            case "sport":
+                return R.color.sport_car;
+            case "flying":
+                return R.color.flying_car;
+            case "electric":
+                return R.color.electric_car;
+            case "motor_home":
+                return R.color.motor_home;
+            case "pick_up":
+                return R.color.pick_up;
+            case "airplane":
+                return R.color.airplane;
+            case "bus":
+                return R.color.bus;
+            default:
+                return R.color.classic_car;
+        }
     }
 
     private int getImageFromTypeCar(String carType) {
-        switch (carType){
+        switch (carType) {
             case "sport":
                 return R.drawable.sport_cart;
             case "flying":

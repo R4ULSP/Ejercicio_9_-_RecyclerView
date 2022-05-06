@@ -26,8 +26,6 @@ y
 Iapp/src/main/java/es/travelworld/ejercicio9_recyclerview/domain/User.java,d\5\d5bd915b0ea6c53633de50fadcd3ffd711d582e5
 Ä
 Papp/src/main/java/es/travelworld/ejercicio9_recyclerview/view/LoginActivity.java,8\0\807d2094826411c08e1998622ff89fee9b6725ab
-
-Oapp/src/main/java/es/travelworld/ejercicio9_recyclerview/domain/References.java,e\6\e676d442a340c5193ad42386389e9eb54802069a
 ç
 ]app/src/main/java/es/travelworld/ejercicio9_recyclerview/view/fragments/PositionFragment.java,8\5\859389c5869f41605d3c1e688d8499d9b294bb9b
 ç
@@ -50,7 +48,5 @@ Zapp/src/main/java/es/travelworld/ejercicio9_recyclerview/view/fragments/MatchFr
 _app/src/main/java/es/travelworld/ejercicio9_recyclerview/view/fragments/OnBoardingFragment.java,d\e\de237a2075eb91d8b7ed7b9ead811c6231e6fefe
 â
 Yapp/src/main/java/es/travelworld/ejercicio9_recyclerview/view/fragments/HomeFragment.java,f\9\f9bfb99faa4656301b467216a705a1db61c16fff
-
-Oapp/src/main/java/es/travelworld/ejercicio9_recyclerview/view/HomeActivity.java,8\0\8016759be40a50ca1835058bf64f889297de7474
 
 Oapp/src/main/java/es/travelworld/ejercicio9_recyclerview/view/MainActivity.java,2\6\26ca2e6e342fc6288d39d0664a2ca43f1acec157
