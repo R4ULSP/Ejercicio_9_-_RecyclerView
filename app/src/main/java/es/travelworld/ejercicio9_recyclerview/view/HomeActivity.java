@@ -44,7 +44,12 @@ public class HomeActivity extends AppCompatActivity {
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        user = getIntent().getParcelableExtra(KEY_USER);
+        //user = getIntent().getParcelableExtra(KEY_USER);
+        user = new User();
+        user.setName("a");
+        user.setLastname("b");
+        user.setPassword("c");
+        user.setAgeGroup("1");
 
         setSupportActionBar(binding.toolbar);
 
