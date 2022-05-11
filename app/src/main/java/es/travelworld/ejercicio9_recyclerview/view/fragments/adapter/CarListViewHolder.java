@@ -1,6 +1,5 @@
 package es.travelworld.ejercicio9_recyclerview.view.fragments.adapter;
 
-import android.content.res.ColorStateList;
 
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
