@@ -1,6 +1,9 @@
 package es.travelworld.ejercicio9_recyclerview.view.fragments.adapter;
 
+import android.content.res.ColorStateList;
+
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import es.travelworld.ejercicio9_recyclerview.R;
@@ -23,7 +26,7 @@ public class CarListViewHolder extends RecyclerView.ViewHolder {
         binding.carName.setText(carItem.getCarName());
         binding.carPhoto.setImageResource(getImageFromTypeCar(carItem.getCarType()));
         binding.carPrice.setText(itemView.getContext().getString(R.string.price_car, carItem.getCarPrice()));
-        binding.cardItem.setBackgroundResource(getCardColor(carItem.getCarType()));
+        binding.cardItem.setCardBackgroundColor(ContextCompat.getColor(itemView.getContext(), (getCardColor(carItem.getCarType()))));
 
         itemView.setOnClickListener(view -> listener.onItemClick(carItem));
     }
