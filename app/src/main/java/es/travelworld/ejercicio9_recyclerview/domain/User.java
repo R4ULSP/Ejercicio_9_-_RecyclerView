@@ -63,7 +63,6 @@ public class User implements Parcelable {
     }
 
     public User() {
-        this.password = "1234";
     }
 
     protected User(Parcel in) {

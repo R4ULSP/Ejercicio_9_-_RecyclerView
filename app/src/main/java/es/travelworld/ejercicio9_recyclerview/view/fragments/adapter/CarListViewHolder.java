@@ -1,7 +1,5 @@
 package es.travelworld.ejercicio9_recyclerview.view.fragments.adapter;
 
-import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -12,11 +10,12 @@ import es.travelworld.ejercicio9_recyclerview.domain.CarItem;
 public class CarListViewHolder extends RecyclerView.ViewHolder {
 
     private final ItemlayoutCarListBinding binding;
+    private final CarListAdapter.OnItemCarClick listener;
 
-    public CarListViewHolder(@NonNull ItemlayoutCarListBinding bindingView) {
+    public CarListViewHolder(@NonNull ItemlayoutCarListBinding bindingView, CarListAdapter.OnItemCarClick listener) {
         super(bindingView.getRoot());
         this.binding = bindingView;
-
+        this.listener = listener;
 
     }
 
@@ -26,7 +25,7 @@ public class CarListViewHolder extends RecyclerView.ViewHolder {
         binding.carPrice.setText(itemView.getContext().getString(R.string.price_car, carItem.getCarPrice()));
         binding.cardItem.setBackgroundResource(getCardColor(carItem.getCarType()));
 
-        binding.cardItem.setOnClickListener(view -> Toast.makeText(itemView.getContext(), carItem.getCarName(), Toast.LENGTH_SHORT).show());
+        itemView.setOnClickListener(view -> listener.onItemClick(carItem));
     }
 
     private int getCardColor(String carType) {

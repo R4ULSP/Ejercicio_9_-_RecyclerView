@@ -164,6 +164,7 @@ public class RegisterFragment extends Fragment implements View.OnClickListener, 
             startActivity(intent);
         } else if (view.equals(binding.registerJoinButton)) {
             User user = new User();
+            user.setPassword("1234");
             user.setName(Objects.requireNonNull(binding.registerInputName.getText()).toString());
             user.setLastname(Objects.requireNonNull(binding.registerInputLastname.getText()).toString());
             user.setAgeGroup(binding.registerInputAge.getText().toString());

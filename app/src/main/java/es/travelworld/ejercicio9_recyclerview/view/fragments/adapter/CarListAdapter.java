@@ -1,8 +1,5 @@
 package es.travelworld.ejercicio9_recyclerview.view.fragments.adapter;
 
-import static es.travelworld.ejercicio9_recyclerview.domain.References.PRUEBAS;
-
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -17,28 +14,25 @@ import es.travelworld.ejercicio9_recyclerview.domain.CarItem;
 public class CarListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private final List<CarItem> items;
+    private final OnItemCarClick listener;
 
-    public CarListAdapter(List<CarItem> items) {
+
+
+    public CarListAdapter(List<CarItem> items, OnItemCarClick listener) {
         this.items = items;
-        Log.d(PRUEBAS,"Entra en el constructor del carlist: " + items.size());
-
+        this.listener = listener;
     }
 
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         ItemlayoutCarListBinding binding = ItemlayoutCarListBinding.inflate(LayoutInflater.from(parent.getContext()),parent,false);
-
-        Log.d(PRUEBAS,"Entra en el onCreateViewHolder");
-
-        return new CarListViewHolder(binding);
+        return new CarListViewHolder(binding, listener);
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        Log.d(PRUEBAS,"Estoy en la posición: " + position);
         if(holder instanceof CarListViewHolder){
-            Log.d(PRUEBAS,"Estoy en la posición: " + position);
             ((CarListViewHolder)holder).bind(items.get(position));
         }
 
@@ -48,5 +42,9 @@ public class CarListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     public int getItemCount() {
 
         return items.size();
+    }
+
+    public interface OnItemCarClick{
+        void onItemClick(CarItem carItem);
     }
 }
